@@ -1,5 +1,7 @@
-﻿#include "pch.h"
+#include "pch.h"
 #include "../cra_0624/prime-factors.cpp"
+#include <vector>
+using namespace std;
 
 class TestFixture : public ::testing::Test {
 public:
@@ -12,6 +14,9 @@ TEST_F(TestFixture, PrimeTest) {
 	EXPECT_EQ(1, 1);
 }
 
-TEST(PrimeTest, Test) {
-	EXPECT_EQ(1, 1);
+TEST(PrimeFactors, Of1) {
+	PrimeFactor prime_factor;
+	vector<int> expected = {};
+	EXPECT_EQ(expected, prime_factor.of(1));
 }
+
