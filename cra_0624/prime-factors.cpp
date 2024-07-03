@@ -6,7 +6,14 @@ class PrimeFactor {
 public:
 	vector<int> of(int number) {
 		vector<int> result = {};
-		if (number > 3) {
+		if (number > 5) {
+			while (number % 2 == 0) {
+				result.push_back(2);
+				number /= 2;
+			}
+			result.push_back(number);
+		}
+		else if (number > 3) {
 			while (number % 2 == 0) {
 				result.push_back(2);
 				number /= 2;
