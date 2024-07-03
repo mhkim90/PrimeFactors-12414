@@ -3,25 +3,18 @@
 #include <vector>
 using namespace std;
 
-class TestFixture : public ::testing::Test {
+class PrimeFixture : public ::testing::Test {
 public:
-
-private:
-	PrimeFactor prime;
+	PrimeFactor prime_factor;
+	vector<int> expected;
 };
 
-TEST_F(TestFixture, PrimeTest) {
-	EXPECT_EQ(1, 1);
-}
-
-TEST(PrimeFactors, Of1) {
-	PrimeFactor prime_factor;
-	vector<int> expected = {};
+TEST_F(PrimeFixture, Of1) {
+	expected = {};
 	EXPECT_EQ(expected, prime_factor.of(1));
 }
 
-TEST(PrimeFactors, Of2) {
-	PrimeFactor prime_factor;
-	vector<int> expected = {2};
+TEST_F(PrimeFixture, Of2) {
+	expected = {2};
 	EXPECT_EQ(expected, prime_factor.of(2));
 }
